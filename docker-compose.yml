@@ -5,7 +5,10 @@ networks:
     driver: bridge
 services:
   solr-node1:
-    image: solr-drupal-preconfigured
+    build:
+      context: .
+      dockerfile: Dockerfile
+    #image: solr-drupal-preconfigured
     environment:
       - SOLR_PORT_NUMBER=8983
       - SOLR_ENABLE_AUTHENTICATION=no
