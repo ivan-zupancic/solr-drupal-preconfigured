@@ -1,0 +1,19 @@
+version: '2'
+
+networks:
+  solr-network:
+    driver: bridge
+services:
+  solr-node1:
+    image: solr-drupal-preconfigured
+    environment:
+      - SOLR_PORT_NUMBER=8983
+      - SOLR_ENABLE_AUTHENTICATION=no
+      - SOLR_CORE_CONF_DIR=/data/search_api_solr_4
+      - SOLR_CORES=dafe-d10,dittt-d8
+    volumes:
+      - ./solr-persistence:/bitnami
+    ports:
+      - '8983:8983'
+    networks:
+      - solr-network
