@@ -2,7 +2,7 @@ name: SOLR Drupal Docker Image CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 env:
   REGISTRY: ghcr.io
